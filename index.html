@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Vélocation Lyon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
+</head>
+
+<body>
+    <section id="titre">
+        <header>
+            <div class="logo-velo">
+                <h1>————— Vélos de location sur LYON —————<br/><i class="fa fa-bicycle"></i><i class="fa fa-bicycle"></i></h1>
+            </div>
+        </header>
+        <p class="msg-bienvenu">Comment faire ? ▼</p>
+    </section>
+    
+    <section id="carrousel">
+        <div id="slider">
+            <img src="images/slide1.png" class="slide" alt="">
+            <img src="images/slide2.png" class="slide" alt="">
+            <img src="images/slide3.png" class="slide" alt="">
+            <img src="images/slide4.png" class="slide" alt="">
+            <i id="bouton-gauche" class="fa fa-angle-left"></i>
+            <i id="bouton-droite" class="fa fa-angle-right"></i>
+            <button id="bouton-pause">||</button>
+        </div>
+        <div id="etapes">
+            <p class="step">Etape 1 :<br />Séléctionnez la station de vôtre choix</p>
+            <p class="step">Etape 2 :<br />Vérifiez si des vélos sont disponibles puis cliquez pour réserver</p>
+            <p class="step">Etape 3 :<br />Indiquez ensuite vôtre nom ET prénom pour enfin signer. Validez. C'est tout.</p>
+            <p class="step">Il ne reste plus qu'à vous souhaiter bonne route !</p>
+        </div>
+    </section>
+    
+    <section id="carte">
+        <div class="msg-carte">
+            <p>Faites vôtre choix sur la carte... <i class="fa fa-map-marker"></i></p>
+        </div>
+        <div id="map"></div>
+        <div id="reservation">
+            <div id="reserver">
+                <h1>Détails sur cette station</h1>
+                <div id="infos-station"></div>
+                <div id="bouton-reserver">
+                    <button>Je réserve</button>
+                </div>
+            </div>
+        </div>
+        <div id="confirmation">
+            <h2>Réserver un vélo</h2>
+            <form>
+                <h3>
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom" class="idForm" placeholder="Entrez vôtre nom">
+                </h3>
+                <h3>
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" class="idForm" placeholder="Entrez vôtre prénom">
+                </h3>
+                <p>Il ne reste plus qu'à signer et valider la réservation</p>
+                <div id="signature">
+                    <canvas id="canvas"></canvas>
+                    <button id="efface">effacer</button>
+                </div>
+                <div id="bouton-choix">
+                    <button id="valide" disabled>Valider</button>
+                    <button id="annule">Annuler</button>
+                </div>
+            </form>
+        </div>
+        <div id="timer">
+            <p id="time"></p>
+        </div>
+    </section>
+    
+    <script src="slider.js"></script>
+    <script src="sign.js"></script>
+    <script src="form.js"></script>
+    <script src="map.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
